@@ -1,0 +1,56 @@
+{
+    "name": "url-downloader-ext",
+    "displayName": "URL Downloader",
+    "author": "Zach K",
+    "version": "0.1.0",
+    "launcherVersion": "10.0.0",
+    "description": "Downloads urls from the clipboard into the selected curation.",
+    "__icon": "icon.svg",
+    "main": "out.js",
+    "contributes": {
+        "configuration": [
+            {
+                "title": "URL Downloader",
+                "properties": {
+                    "com.curator-tools.downloader.concurrency": {
+                        "title": "Concurrency",
+                        "type": "string",
+                        "default": "1",
+                        "description": "The maximum number of concurrent requests the downloader can make at a time."
+                    },
+                    "com.curator-tools.downloader.downgrade": {
+                        "title": "Downgrade Requests",
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Downgrades all requests with extra data (like POST) into no-data GET requests."
+                    },
+                    "com.curator-tools.downloader.wayback": {
+                        "title": "Rename Wayback URLs",
+                        "type": "boolean",
+                        "default": true,
+                        "description": "Puts files downloaded from wayback back into their original domains."
+                    },
+                    "com.curator-tools.downloader.keep-vars": {
+                        "title": "Keep Vars",
+                        "type": "boolean",
+                        "default": true,
+                        "description": "Includes url parameters in the filename, replacing ? with @."
+                    },
+                    "com.curator-tools.downloader.duplicates": {
+                        "title": "Duplicate Files",
+                        "type": "boolean",
+                        "default": false,
+                        "description": "When the same file is requested twice with different data, save it into different spots."
+                    }
+                }
+            }
+        ],
+        "contextButtons": [
+            {
+                "context": "curation",
+                "name": "Download URLs",
+                "command": "curator-tools.download"
+            }
+        ]
+    }
+}
