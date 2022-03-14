@@ -27,11 +27,7 @@
     },
     "dependencies": {
         "@supercharge/promise-pool": "^2.1.0",
-        "clipboardy": "^3.0.0",
-        "node-fetch": "^3.2.3",
-        "vm2": "^3.9.9"
-    },
-    "peerDependencies": {
-        "flashpoint-launcher": "*"
+        "json5": "^2.2.0",
+        "node-fetch-cjs": "^3.2.3"
     }
 }

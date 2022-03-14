@@ -15,8 +15,15 @@
                     "com.curator-tools.downloader.concurrency": {
                         "title": "Concurrency",
                         "type": "string",
-                        "default": "1",
-                        "description": "The maximum number of concurrent requests the downloader can make at a time."
+                        "description": "The maximum number of concurrent requests the downloader can make at a time.",
+                        "enum": [
+                            "1",
+                            "2",
+                            "3",
+                            "5",
+                            "10",
+                            "20"
+                        ]
                     },
                     "com.curator-tools.downloader.downgrade": {
                         "title": "Downgrade Requests",
@@ -33,7 +40,7 @@
                     "com.curator-tools.downloader.keep-vars": {
                         "title": "Keep Vars",
                         "type": "boolean",
-                        "default": true,
+                        "default": false,
                         "description": "Includes url parameters in the filename, replacing ? with @."
                     },
                     "com.curator-tools.downloader.duplicates": {

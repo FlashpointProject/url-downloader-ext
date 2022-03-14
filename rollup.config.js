@@ -2,7 +2,6 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import { terser } from 'rollup-plugin-terser';
-import pkg from "./package.json";
 
 export default {
     input: "index.ts",
@@ -11,10 +10,13 @@ export default {
         format: "cjs",
         inlineDynamicImports: true
     },
+    external: [
+        'flashpoint-launcher'
+    ],
     plugins: [
-        resolve(), // so Rollup can find `ms`
-        commonjs(), // so Rollup can convert `ms` to an ES module
+        resolve(),
+        commonjs(),
         typescript(),
-        terser()
+        terser(),
     ]
 };
